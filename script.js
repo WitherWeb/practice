@@ -1,22 +1,22 @@
 // Вход:
-const words = ['кот', 'пёс', 'кот', 'кот', 'пёс'];
+const nums = [5, 1, 9, 3, 7];
+const min = 3;
+const max = 7;
 
-const wordFreq = (words) => {
-  return words.reduce((obj, value) => {
-    if(!obj[value]){
-      obj[value] = 1
-    }else {
-      obj[value] = obj[value] + 1
+const filterRange = (nums, min, max) => {
+  let result = []
+  nums.forEach((el) => {
+    if(el >= min && el <= max) {
+      result.push(el)
     }
-    
-    return obj
-  }, {})
+  })
+  return result
 }
 
 // Вызов:
-const result = wordFreq(words);
+const result = filterRange(nums, min, max);
 
 console.log(result)
 
 // Ожидаемый результат:
-const expected = { 'кот': 3, 'пёс': 2 };
+const expected = [5, 3, 7];
